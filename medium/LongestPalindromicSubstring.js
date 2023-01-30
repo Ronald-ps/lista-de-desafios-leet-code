@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/longest-palindromic-substring/
 
 /**
  * @param {string} s
@@ -17,7 +18,7 @@ var longestPalindrome = function (s) {
       if (ocorrencias > 1) {
         if (!caracteresQueSeRepetem[char]) caracteresQueSeRepetem[char] = [i]
         else {
-         caracteresQueSeRepetem[char].push(i)
+          caracteresQueSeRepetem[char].push(i)
         }
       }
     }
@@ -26,7 +27,7 @@ var longestPalindrome = function (s) {
 
   const verificaSeEhPalindrome = (subString) => {
     const metadeDaString = Math.floor(subString.length / 2)
-    for (let i = 0; i < metadeDaString; i ++) {
+    for (let i = 0; i < metadeDaString; i++) {
       if (subString[i] !== subString[subString.length - 1 - i]) return false
     }
     return true
@@ -37,7 +38,7 @@ var longestPalindrome = function (s) {
     for (const j in listaDeIndices) {
       const indice = listaDeIndices[j]
 
-      for (let i = listaDeIndices.length - 1; i > 0; i--){
+      for (let i = listaDeIndices.length - 1; i > 0; i--) {
 
         if (indice == listaDeIndices[i]) continue
 
@@ -62,7 +63,7 @@ var longestPalindrome = function (s) {
       }
     }
 
-      return maiorPalindromo
+    return maiorPalindromo
   }
 
   const caracteresQueSeRepetem = armazenaCaracteresQueSeRepetem(s)
@@ -73,7 +74,7 @@ var longestPalindrome = function (s) {
     let palindromos = pegaPalindromos(s, indices)
 
     if (palindromos.length > 0)
-    todosOsPalindromos.push(...palindromos)
+      todosOsPalindromos.push(...palindromos)
   }
 
   if (todosOsPalindromos.length === 0) return s[0] // se não achou nenhum palíndromo, retorna a primeira letra
